@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctj5sd2geto28"]
 
 [ext_resource type="TileSet" uid="uid://di55kwpaogdim" path="res://assets/tilesets/purpletileset.tres" id="1_y4jbh"]
-[ext_resource type="Script" uid="uid://dmafcb26al6h8" path="res://purple_tiles.gd" id="2_pxmnw"]
+[ext_resource type="Script" uid="uid://dmafcb26al6h8" path="res://scripts/purple_tiles.gd" id="2_pxmnw"]
 
 [node name="PurpleTiles" type="TileMapLayer"]
 tile_set = ExtResource("1_y4jbh")

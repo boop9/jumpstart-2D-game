@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d6gwv8im0fg5"]
 
 [ext_resource type="TileSet" uid="uid://ccdshsplipxbb" path="res://assets/tilesets/pinktileset.tres" id="1_1ncql"]
-[ext_resource type="Script" uid="uid://ck62j3lt6roal" path="res://pink_tiles.gd" id="2_b2oxn"]
+[ext_resource type="Script" uid="uid://ck62j3lt6roal" path="res://scripts/pink_tiles.gd" id="2_b2oxn"]
 
 [node name="PinkTiles" type="TileMapLayer"]
 tile_set = ExtResource("1_1ncql")

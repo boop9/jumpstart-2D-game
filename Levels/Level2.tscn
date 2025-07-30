@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=4 uid="uid://cy71uq5jv3r4i"]
 
 [ext_resource type="PackedScene" uid="uid://e4to6uptjsru" path="res://player.tscn" id="1_lfj2m"]
-[ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://tilemaps/purple_tiles.tscn" id="2_506po"]
-[ext_resource type="PackedScene" uid="uid://d6gwv8im0fg5" path="res://tilemaps/pink_tiles.tscn" id="2_wcc2u"]
-[ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://tilemaps/solid_tiles.tscn" id="3_nn734"]
+[ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://components/purple_tiles.tscn" id="2_506po"]
+[ext_resource type="PackedScene" uid="uid://d6gwv8im0fg5" path="res://components/pink_tiles.tscn" id="2_wcc2u"]
+[ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://components/solid_tiles.tscn" id="3_nn734"]
 [ext_resource type="PackedScene" uid="uid://b8w8wdhrgcp44" path="res://components/spawn.tscn" id="5_v115i"]
 [ext_resource type="PackedScene" uid="uid://cafyswoygpwvy" path="res://components/next_level.tscn" id="6_jglcl"]
 
@@ -29,3 +29,5 @@ position = Vector2(64, -64)
 position = Vector2(64, -64)
 
 [connection signal="body_entered" from="NextLevel" to="CharacterBody2D" method="_on_next_level_body_entered"]
+
+[editable path="CharacterBody2D"]

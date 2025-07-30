@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://dfy4es0xwcaip"]
 
-[ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://tilemaps/solid_tiles.tscn" id="1_nutv8"]
-[ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://tilemaps/purple_tiles.tscn" id="2_05pb0"]
-[ext_resource type="PackedScene" uid="uid://d6gwv8im0fg5" path="res://tilemaps/pink_tiles.tscn" id="3_dl8mf"]
+[ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://components/solid_tiles.tscn" id="1_nutv8"]
+[ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://components/purple_tiles.tscn" id="2_05pb0"]
+[ext_resource type="PackedScene" uid="uid://d6gwv8im0fg5" path="res://components/pink_tiles.tscn" id="3_dl8mf"]
 [ext_resource type="PackedScene" uid="uid://e4to6uptjsru" path="res://player.tscn" id="6_05pb0"]
 [ext_resource type="PackedScene" uid="uid://b8w8wdhrgcp44" path="res://components/spawn.tscn" id="6_dl8mf"]
 [ext_resource type="PackedScene" uid="uid://cafyswoygpwvy" path="res://components/next_level.tscn" id="7_dl8mf"]

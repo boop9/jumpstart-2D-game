@@ -1,10 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://e4to6uptjsru"]
+[gd_scene load_steps=5 format=3 uid="uid://e4to6uptjsru"]
 
 [ext_resource type="Script" uid="uid://bfhxy7ckj4qf5" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://levew53vdbgn" path="res://spritesheets/character/icon.svg" id="2_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(127, 127)
+
+[sub_resource type="GDScript" id="GDScript_onrkg"]
+script/source = "extends Camera2D
+
+@onready var parent = get_parent()
+
+func _ready() -> void:
+	pass
+
+func cutscene_recenter(node:Node, time):
+	var parent = self.get_parent()
+	self.reparent(node)
+	print(get_parent())
+	await get_tree().create_timer(time).timeout;
+	self.reparent(parent)
+
+
+func _on_character_body_2d_my_signal() -> void:
+	var node = $NextLevel
+	cutscene_recenter(node,3)
+"
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 3
@@ -22,6 +43,7 @@ shape = SubResource("RectangleShape2D_ig7tw")
 position = Vector2(-64, 64)
 position_smoothing_enabled = true
 position_smoothing_speed = 16.0
+script = SubResource("GDScript_onrkg")
 
 [node name="Container" type="HBoxContainer" parent="Camera2D"]
 offset_left = 364.0
