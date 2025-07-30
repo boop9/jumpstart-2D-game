@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://cy71uq5jv3r4i"]
+[gd_scene load_steps=7 format=4 uid="uid://cy71uq5jv3r4i"]
 
 [ext_resource type="PackedScene" uid="uid://e4to6uptjsru" path="res://player.tscn" id="1_lfj2m"]
 [ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://tilemaps/purple_tiles.tscn" id="2_506po"]
 [ext_resource type="PackedScene" uid="uid://d6gwv8im0fg5" path="res://tilemaps/pink_tiles.tscn" id="2_wcc2u"]
 [ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://tilemaps/solid_tiles.tscn" id="3_nn734"]
 [ext_resource type="PackedScene" uid="uid://b8w8wdhrgcp44" path="res://components/spawn.tscn" id="5_v115i"]
+[ext_resource type="PackedScene" uid="uid://cafyswoygpwvy" path="res://components/next_level.tscn" id="6_jglcl"]
 
 [node name="Level2" type="Node2D"]
 metadata/Level = 2
@@ -12,13 +13,19 @@ metadata/Level = 2
 [node name="SolidTiles" parent="." instance=ExtResource("3_nn734")]
 
 [node name="PurpleTiles" parent="." instance=ExtResource("2_506po")]
-tile_map_data = PackedByteArray("AAAAAAAAAAAFAA8AAAABAAAAAAAFAA4AAAACAAAAAAAFAA4AAAADAAAAAAAFAAsAAAAFAP//AAAFAAQAAAAFAP7/AAAFAAMAAAAFAAAAAAAFAAUAAAACAP3/AAAGAAwAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAFAA8AAAABAAAAAAAFAA4AAAACAAAAAAAFAA4AAAADAAAAAAAFAAsAAAAFAP//AAAFAAQAAAAFAP7/AAAFAAMAAAAFAAAAAAAFAAUAAAACAP3/AAAGAAwAAAD7//7/AAAFAAsAAAD6//7/AAAFAA4AAAD5//7/AAAFAA4AAAD4//7/AAAFAA4AAAD3//7/AAAFAA4AAAD2//7/AAAFAA8AAAA=")
 
 [node name="PinkTiles" parent="." instance=ExtResource("2_wcc2u")]
 tile_map_data = PackedByteArray("AAAHAP//AAAEAAUAAAAIAP//AAAEAAQAAAAJAP//AAAEAAEAAAD///z/AAAFAAIAAAA=")
+
+[node name="NextLevel" parent="." instance=ExtResource("6_jglcl")]
+position = Vector2(-600, -192)
+team = "Purple"
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_lfj2m")]
 position = Vector2(64, -64)
 
 [node name="Spawn" parent="." instance=ExtResource("5_v115i")]
 position = Vector2(64, -64)
+
+[connection signal="body_entered" from="NextLevel" to="CharacterBody2D" method="_on_next_level_body_entered"]
