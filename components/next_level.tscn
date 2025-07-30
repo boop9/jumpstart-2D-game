@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cafyswoygpwvy"]
+
+[ext_resource type="Texture2D" uid="uid://dwtwoqojgtdhl" path="res://textures/flag_blue_a.png" id="1_ud4v0"]
+[ext_resource type="Texture2D" uid="uid://bn4l08josgq54" path="res://textures/flagpole.png" id="2_usmu2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usmu2"]
+size = Vector2(64, 128)
+
+[node name="NextLevel" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_usmu2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_ud4v0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+texture = ExtResource("2_usmu2")

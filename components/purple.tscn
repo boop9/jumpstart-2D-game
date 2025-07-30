@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://co7shfgtw3a3l"]
+
+[sub_resource type="GDScript" id="GDScript_mr8dp"]
+script/source = "extends Node2D
+
+var localSwitchState = true
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	localSwitchState = Global.switchState
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if localSwitchState != Global.switchState:
+		localSwitchState = Global.switchState
+		if parent_node:
+			if localSwitchState == true:
+				parent_node.self_modulate = Color(1,1,1,0.25)
+			else:
+				parent_node.self_modulate = Color(1,1,1,1)
+"
+
+[node name="Purple" type="Node2D"]
+script = SubResource("GDScript_mr8dp")
