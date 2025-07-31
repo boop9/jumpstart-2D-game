@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://cy71uq5jv3r4i"]
 
-[ext_resource type="PackedScene" uid="uid://e4to6uptjsru" path="res://player.tscn" id="1_lfj2m"]
+[ext_resource type="PackedScene" uid="uid://e4to6uptjsru" path="res://components/player.tscn" id="1_lfj2m"]
 [ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://components/purple_tiles.tscn" id="2_506po"]
 [ext_resource type="PackedScene" uid="uid://d6gwv8im0fg5" path="res://components/pink_tiles.tscn" id="2_wcc2u"]
 [ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://components/solid_tiles.tscn" id="3_nn734"]
@@ -11,16 +11,16 @@
 metadata/Level = 2
 
 [node name="SolidTiles" parent="." instance=ExtResource("3_nn734")]
+tile_map_data = PackedByteArray("AAAZAP//AAARAAgAAADw//7/AAAHAA4AAADw////AAAIAAIAAADx////AAAIAAMAAADy////AAAIAAEAAADy//7/AAAHAA8AAADx//7/AAAHAA8AAADz//7/AAAHAAQAAAA=")
 
 [node name="PurpleTiles" parent="." instance=ExtResource("2_506po")]
-tile_map_data = PackedByteArray("AAAAAAAAAAAFAA8AAAABAAAAAAAFAA4AAAACAAAAAAAFAA4AAAADAAAAAAAFAAsAAAAFAP//AAAFAAQAAAAFAP7/AAAFAAMAAAAFAAAAAAAFAAUAAAACAP3/AAAGAAwAAAD7//7/AAAFAAsAAAD6//7/AAAFAA4AAAD5//7/AAAFAA4AAAD4//7/AAAFAA4AAAD3//7/AAAFAA4AAAD2//7/AAAFAA8AAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAFAA8AAAABAAAAAAAFAA4AAAACAAAAAAAFAA4AAAADAAAAAAAFAAsAAAAFAP//AAAFAAQAAAAFAP7/AAAFAAMAAAAFAAAAAAAFAAUAAAACAP3/AAAGAAwAAAD3//j/AAAFAA4AAAD4//j/AAAFAA4AAAD5//j/AAAFAA4AAAD6//j/AAAFAA4AAAD7//j/AAAFAA4AAAD8//j/AAAFAA4AAAD9//j/AAAFAA4AAAD+//j/AAAFAAsAAAD2//j/AAAFAA8AAAA=")
 
 [node name="PinkTiles" parent="." instance=ExtResource("2_wcc2u")]
-tile_map_data = PackedByteArray("AAAHAP//AAAEAAUAAAAIAP//AAAEAAQAAAAJAP//AAAEAAEAAAD///z/AAAFAAIAAAA=")
+tile_map_data = PackedByteArray("AAAIAP//AAAEAAEAAAD+//z/AAAFAAIAAAAHAP//AAAEAAUAAAD9//v/AAADAA0AAAD9//r/AAADAAwAAAD9//n/AAADAAsAAAD7//z/AAAFAAIAAAD5//v/AAADAA0AAAD5//r/AAADAAwAAAD5//n/AAADAAsAAAD3//z/AAAFAAIAAAA=")
 
 [node name="NextLevel" parent="." instance=ExtResource("6_jglcl")]
-position = Vector2(-600, -192)
-team = "Purple"
+position = Vector2(-984, -192)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_lfj2m")]
 position = Vector2(64, -64)

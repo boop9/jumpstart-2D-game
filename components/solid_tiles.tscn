@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqbxfsatf38jo"]
 
-[ext_resource type="TileSet" uid="uid://di55kwpaogdim" path="res://assets/tilesets/purpletileset.tres" id="1_iw0kl"]
+[ext_resource type="TileSet" uid="uid://dnnfsde62of3i" path="res://assets/tilesets/platformertileset.tres" id="1_ehmk3"]
 
 [node name="SolidTiles" type="TileMapLayer"]
 tile_map_data = PackedByteArray(0, 0, 25, 0, 255, 255, 0, 0, 17, 0, 8, 0, 0, 0)
-tile_set = ExtResource("1_iw0kl")
+tile_set = ExtResource("1_ehmk3")

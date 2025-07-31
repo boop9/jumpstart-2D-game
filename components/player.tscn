@@ -44,12 +44,3 @@ position = Vector2(-64, 64)
 position_smoothing_enabled = true
 position_smoothing_speed = 16.0
 script = SubResource("GDScript_onrkg")
-
-[node name="Container" type="HBoxContainer" parent="Camera2D"]
-offset_left = 364.0
-offset_top = 175.0
-offset_right = 573.0
-offset_bottom = 325.0
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/Container"]
-layout_mode = 2

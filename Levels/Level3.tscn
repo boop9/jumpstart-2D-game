@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://quws45k5cyv5"]
+[gd_scene load_steps=6 format=4 uid="uid://quws45k5cyv5"]
+
+[ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://components/solid_tiles.tscn" id="1_xb24h"]
+[ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://components/purple_tiles.tscn" id="2_8eiv4"]
+[ext_resource type="PackedScene" uid="uid://e4to6uptjsru" path="res://components/player.tscn" id="2_jon3f"]
+[ext_resource type="PackedScene" uid="uid://d6gwv8im0fg5" path="res://components/pink_tiles.tscn" id="3_yd8fq"]
+[ext_resource type="PackedScene" uid="uid://b8w8wdhrgcp44" path="res://components/spawn.tscn" id="5_yd8fq"]
 
 [node name="Level3" type="Node2D"]
+
+[node name="SolidTiles" parent="." instance=ExtResource("1_xb24h")]
+tile_map_data = PackedByteArray("AAAZAP//AAARAAgAAAAAAAAAAAAHAA8AAAABAAAAAAAHAA8AAAABAAEAAAAIAAMAAAAAAAEAAAAIAAMAAAACAAAAAAAHAA8AAAACAAEAAAAIAAEAAAD//wAAAAAHAA8AAAD//wEAAAAIAAIAAAADAAAAAAAHAAQAAAD+/wAAAAAHAAUAAAA=")
+
+[node name="PurpleTiles" parent="." instance=ExtResource("2_8eiv4")]
+
+[node name="PinkTiles" parent="." instance=ExtResource("3_yd8fq")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_jon3f")]
+position = Vector2(64, -64)
+
+[node name="Spawn" parent="." instance=ExtResource("5_yd8fq")]
+position = Vector2(64, -64)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]

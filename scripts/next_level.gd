@@ -9,14 +9,14 @@ func switch(node : Node):
 		if node.team == "Pink":
 			Global.fade_out(node)
 			set_collision_mask_value(2,false)
-		else:
+		elif node.team == "Purple":
 			Global.fade_in(node)
 			set_collision_mask_value(2,true)
 	else:
 		if node.team == "Pink":
 			Global.fade_in(node)
 			set_collision_mask_value(2,true)
-		else:
+		elif node.team == "Purple":
 			Global.fade_out(node)
 			set_collision_mask_value(2,false)
 
