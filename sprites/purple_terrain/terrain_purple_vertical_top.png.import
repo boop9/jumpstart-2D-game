@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k8jv8lqxg4i0"
-path="res://.godot/imported/tile_0123.png-9f9b2db23db1a2e5ee7bcf5e1d97c4a6.ctex"
+uid="uid://b4ymtv1t64eo4"
+path="res://.godot/imported/terrain_purple_vertical_top.png-5df814d27d1f51e73e7fd6d6832d643d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tile_0123.png"
-dest_files=["res://.godot/imported/tile_0123.png-9f9b2db23db1a2e5ee7bcf5e1d97c4a6.ctex"]
+source_file="res://sprites/purple_terrain/terrain_purple_vertical_top.png"
+dest_files=["res://.godot/imported/terrain_purple_vertical_top.png-5df814d27d1f51e73e7fd6d6832d643d.ctex"]
 
 [params]
 

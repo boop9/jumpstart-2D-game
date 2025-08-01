@@ -1,0 +1,296 @@
+[gd_scene load_steps=27 format=4 uid="uid://bcotik5kvi7y0"]
+
+[ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://components/solid_tiles.tscn" id="1_2qv2g"]
+[ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://components/purple_tiles.tscn" id="2_0sogr"]
+[ext_resource type="PackedScene" uid="uid://d6gwv8im0fg5" path="res://components/pink_tiles.tscn" id="3_5brs8"]
+[ext_resource type="PackedScene" uid="uid://e4to6uptjsru" path="res://components/player.tscn" id="4_qgpl5"]
+[ext_resource type="PackedScene" uid="uid://b4pa8nc7nps5m" path="res://components/purple_obstacle.tscn" id="5_0sogr"]
+[ext_resource type="Script" uid="uid://vnoqy6xhf4pk" path="res://components/moving_obstacle.gd" id="5_lfbxl"]
+[ext_resource type="PackedScene" uid="uid://b8w8wdhrgcp44" path="res://components/spawn.tscn" id="5_so18s"]
+[ext_resource type="Shape2D" uid="uid://ckthxhbeuyl1p" path="res://assets/obstacle_two_vertical_collision_shape.tres" id="6_v72e1"]
+[ext_resource type="Texture2D" uid="uid://dpq1mfg1bi6kl" path="res://sprites/purple_terrain/terrain_purple_horizontal_right.png" id="8_hg5yk"]
+[ext_resource type="Texture2D" uid="uid://b4ymtv1t64eo4" path="res://sprites/purple_terrain/terrain_purple_vertical_top.png" id="8_jld50"]
+[ext_resource type="Texture2D" uid="uid://1s5cpbya4yr3" path="res://sprites/purple_terrain/terrain_purple_block.png" id="9_jld50"]
+[ext_resource type="Texture2D" uid="uid://caktxnevpv07h" path="res://sprites/purple_terrain/terrain_purple_vertical_bottom.png" id="9_svocn"]
+[ext_resource type="PackedScene" uid="uid://cafyswoygpwvy" path="res://components/next_level.tscn" id="12_hg5yk"]
+[ext_resource type="Texture2D" uid="uid://bd11owd61dnlq" path="res://sprites/solid_terrain/terrain_grass_horizontal_left.png" id="13_xrw8b"]
+[ext_resource type="Texture2D" uid="uid://o1kckxyfktfk" path="res://sprites/solid_terrain/terrain_grass_horizontal_middle.png" id="14_jtuoa"]
+[ext_resource type="Texture2D" uid="uid://cbj1dbu6h7fv" path="res://sprites/solid_terrain/terrain_grass_horizontal_right.png" id="15_cajnr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrw8b"]
+size = Vector2(176, 20)
+
+[sub_resource type="Animation" id="Animation_v72e1"]
+resource_name = "move_level4"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PurplePlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(288, 672), Vector2(-224, 672), Vector2(288, 672)]
+}
+
+[sub_resource type="Animation" id="Animation_so18s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PurplePlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(288, 800)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SolidFadingPlatform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-992, 672)]
+}
+
+[sub_resource type="Animation" id="Animation_xrw8b"]
+resource_name = "move_solid"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SolidFadingPlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-992, 672), Vector2(-992, -416)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hg5yk"]
+_data = {
+&"RESET": SubResource("Animation_so18s"),
+&"move_level4": SubResource("Animation_v72e1"),
+&"move_solid": SubResource("Animation_xrw8b")
+}
+
+[sub_resource type="Animation" id="Animation_cajnr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SolidFadingPlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-992, 672)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SolidFadingPlatform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-992, 864)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SolidFadingPlatform:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3k6h0"]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SolidFadingPlatform:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.4, 1.8, 2.1, 2.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3k6h0"]
+_data = {
+&"RESET": SubResource("Animation_cajnr"),
+&"fade": SubResource("Animation_3k6h0")
+}
+
+[sub_resource type="Animation" id="Animation_jtuoa"]
+resource_name = "move_solid"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SolidFadingPlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-992, 672), Vector2(-992, -416), Vector2(-992, 672)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SolidFadingPlatform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-992, 864), Vector2(-992, -224), Vector2(-992, 864)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cajnr"]
+_data = {
+&"move_solid": SubResource("Animation_jtuoa")
+}
+
+[node name="Level4" type="Node2D"]
+
+[node name="SolidTiles" parent="." instance=ExtResource("1_2qv2g")]
+tile_map_data = PackedByteArray("AAAZAP//AAARAAgAAAD//wAAAAAHABAAAAD//wEAAAAHABAAAAD//wIAAAAHABAAAAD/////AAAHABAAAAD///7/AAAHABAAAAABAP7/AAAHABEAAAABAP//AAAHABEAAAABAAAAAAAHABEAAAABAAEAAAAHABEAAAABAAIAAAAHABEAAAABAAMAAAAHABEAAAABAAQAAAAHABEAAAABAAUAAAAHABEAAAABAAYAAAAIAAIAAAD//wYAAAAIAAEAAAD//wUAAAAHABAAAAD//wQAAAAHABAAAAD//wMAAAAHABAAAAD///3/AAAIAAAAAAD///z/AAAIAAAAAAD///v/AAAIAAAAAAD+/wYAAAAIAAMAAAD+/wUAAAAIAAAAAAD+/wQAAAAIAAAAAAD+/wMAAAAIAAAAAAD+/wIAAAAIAAAAAAD+/wEAAAAIAAAAAAD+/wAAAAAIAAAAAAD+////AAAIAAAAAAD+//7/AAAIAAAAAAD+//3/AAAIAAAAAAD+//z/AAAIAAAAAAD+//v/AAAIAAAAAAD9/wYAAAAIAAMAAAD9/wUAAAAIAAAAAAD9/wQAAAAIAAAAAAD9/wMAAAAIAAAAAAD9/wIAAAAIAAAAAAD9/wEAAAAIAAAAAAD9/wAAAAAIAAAAAAD9////AAAIAAAAAAD9//7/AAAIAAAAAAD9//3/AAAIAAAAAAD9//z/AAAIAAAAAAD9//v/AAAIAAAAAAD8/wYAAAAIAAMAAAD8/wUAAAAIAAAAAAD8/wQAAAAIAAAAAAD8/wMAAAAIAAAAAAD8/wIAAAAIAAAAAAD8/wEAAAAIAAAAAAD8/wAAAAAIAAAAAAD8////AAAIAAAAAAD8//7/AAAIAAAAAAD8//3/AAAIAAAAAAD8//z/AAAIAAAAAAD8//v/AAAIAAAAAAD7/wYAAAAIAAMAAAD7/wUAAAAIAAAAAAD7/wQAAAAIAAAAAAD7/wMAAAAIAAAAAAD7/wIAAAAIAAAAAAD7/wEAAAAIAAAAAAD7/wAAAAAIAAAAAAD7////AAAIAAAAAAD7//7/AAAIAAAAAAD7//3/AAAIAAAAAAD7//z/AAAIAAAAAAD7//v/AAAIAAAAAAD6/wYAAAAIAAMAAAD6/wUAAAAIAAAAAAD6/wQAAAAIAAAAAAD6/wMAAAAIAAAAAAD6/wIAAAAIAAAAAAD6/wEAAAAIAAAAAAD6/wAAAAAIAAAAAAD6////AAAIAAAAAAD6//7/AAAIAAAAAAD6//3/AAAIAAAAAAD6//z/AAAIAAAAAAD6//v/AAAIAAAAAAD5/wYAAAAIAAMAAAD5/wUAAAAIAAAAAAD5/wQAAAAIAAAAAAD5/wMAAAAIAAAAAAD5/wIAAAAIAAAAAAD5/wEAAAAIAAAAAAD5/wAAAAAIAAAAAAD5////AAAIAAAAAAD5//7/AAAIAAAAAAD5//3/AAAIAAAAAAD5//z/AAAIAAAAAAD5//v/AAAIAAAAAAD4/wYAAAAIAAMAAAD4/wUAAAAIAAAAAAD4/wQAAAAIAAAAAAD4/wMAAAAIAAAAAAD4/wIAAAAIAAAAAAD4/wEAAAAIAAAAAAD4/wAAAAAIAAAAAAD4////AAAIAAAAAAD4//7/AAAIAAAAAAD4//3/AAAIAAAAAAD4//z/AAAIAAAAAAD4//v/AAAIAAAAAAD3/wYAAAAIAAMAAAD3/wUAAAAIAAAAAAD3/wQAAAAIAAAAAAD3/wMAAAAIAAAAAAD3/wIAAAAIAAAAAAD3/wEAAAAIAAAAAAD3/wAAAAAIAAAAAAD3////AAAIAAAAAAD3//7/AAAIAAAAAAD3//3/AAAIAAAAAAD3//z/AAAIAAAAAAD3//v/AAAIAAAAAAD2/wYAAAAIAAMAAAD2/wUAAAAIAAAAAAD2/wQAAAAIAAAAAAD2/wMAAAAIAAAAAAD2/wIAAAAIAAAAAAD2/wEAAAAIAAAAAAD2/wAAAAAIAAAAAAD2////AAAIAAAAAAD2//7/AAAIAAAAAAD2//3/AAAIAAAAAAD2//z/AAAIAAAAAAD2//v/AAAIAAAAAAD1/wYAAAAIAAIAAAD1/wUAAAAIAAAAAAD1/wQAAAAIAAAAAAD1/wMAAAAIAAAAAAD1/wIAAAAIAAAAAAD1/wEAAAAIAAAAAAD1/wAAAAAIAAAAAAD1////AAAIAAAAAAD1//7/AAAIAAAAAAD1//3/AAAIAAAAAAD1//z/AAAIAAAAAAD1//v/AAAIAAAAAAD0/wUAAAAIAAIAAAD0/wQAAAAIAAAAAAD0/wMAAAAIAAAAAAD0/wIAAAAIAAAAAAD0/wEAAAAIAAAAAAD0/wAAAAAIAAAAAAD0////AAAIAAAAAAD0//7/AAAIAAAAAAD0//3/AAAIAAAAAAD0//z/AAAIAAAAAAD0//v/AAAIAAAAAADz/wQAAAAIAAIAAADz/wMAAAAHABEAAADz/wIAAAAHABEAAADz/wEAAAAHABEAAADz/wAAAAAHABEAAADz////AAAHABEAAADz//7/AAAHABEAAADz//3/AAAHABEAAADz//z/AAAHABEAAADz//v/AAAHABEAAAANAAYAAAAIAAEAAAANAAUAAAAHABAAAAANAAQAAAAHABAAAAANAAMAAAAHABAAAAANAAIAAAAHABAAAAANAAEAAAAHABAAAAANAAAAAAAHABAAAAANAP//AAAHABAAAAANAP7/AAAHABAAAAANAP3/AAAHABAAAAANAPz/AAAHABAAAAANAPv/AAAHABAAAAAMAAYAAAAIAAMAAAAMAAUAAAAIAAAAAAAMAAQAAAAIAAAAAAAMAAMAAAAIAAAAAAAMAAIAAAAIAAAAAAAMAAEAAAAIAAAAAAAMAAAAAAAIAAAAAAAMAP//AAAIAAAAAAAMAP7/AAAIAAAAAAAMAP3/AAAIAAAAAAAMAPz/AAAIAAAAAAAMAPv/AAAIAAAAAAALAAYAAAAIAAMAAAALAAUAAAAIAAAAAAALAAQAAAAIAAAAAAALAAMAAAAIAAAAAAALAAIAAAAIAAAAAAALAAEAAAAIAAAAAAALAAAAAAAIAAAAAAALAP//AAAIAAAAAAALAP7/AAAIAAAAAAALAP3/AAAIAAAAAAALAPz/AAAIAAAAAAALAPv/AAAIAAAAAAAKAAYAAAAIAAMAAAAKAAUAAAAIAAAAAAAKAAQAAAAIAAAAAAAKAAMAAAAIAAAAAAAKAAIAAAAIAAAAAAAKAAEAAAAIAAAAAAAKAAAAAAAIAAAAAAAKAP//AAAIAAAAAAAKAP7/AAAIAAAAAAAKAP3/AAAIAAAAAAAKAPz/AAAIAAAAAAAKAPv/AAAIAAAAAAAJAAYAAAAIAAMAAAAJAAUAAAAIAAAAAAAJAAQAAAAIAAAAAAAJAAMAAAAIAAAAAAAJAAIAAAAIAAAAAAAJAAEAAAAIAAAAAAAJAAAAAAAIAAAAAAAJAP//AAAIAAAAAAAJAP7/AAAIAAAAAAAJAP3/AAAIAAAAAAAJAPz/AAAIAAAAAAAJAPv/AAAIAAAAAAAIAAYAAAAIAAMAAAAIAAUAAAAIAAAAAAAIAAQAAAAIAAAAAAAIAAMAAAAIAAAAAAAIAAIAAAAIAAAAAAAIAAEAAAAIAAAAAAAIAAAAAAAIAAAAAAAIAP//AAAIAAAAAAAIAP7/AAAIAAAAAAAIAP3/AAAIAAAAAAAIAPz/AAAIAAAAAAAIAPv/AAAIAAAAAAAHAAYAAAAIAAMAAAAHAAUAAAAIAAAAAAAHAAQAAAAIAAAAAAAHAAMAAAAIAAAAAAAHAAIAAAAIAAAAAAAHAAEAAAAIAAAAAAAHAAAAAAAIAAAAAAAHAP//AAAIAAAAAAAHAP7/AAAIAAAAAAAHAP3/AAAIAAAAAAAHAPz/AAAIAAAAAAAHAPv/AAAIAAAAAAAGAAYAAAAIAAMAAAAGAAUAAAAIAAAAAAAGAAQAAAAIAAAAAAAGAAMAAAAIAAAAAAAGAAIAAAAIAAAAAAAGAAEAAAAIAAAAAAAGAAAAAAAIAAAAAAAGAP//AAAIAAAAAAAGAP7/AAAIAAAAAAAGAP3/AAAIAAAAAAAGAPz/AAAIAAAAAAAGAPv/AAAIAAAAAAAFAAYAAAAIAAMAAAAFAAUAAAAIAAAAAAAFAAQAAAAIAAAAAAAFAAMAAAAIAAAAAAAFAAIAAAAIAAAAAAAFAAEAAAAIAAAAAAAFAAAAAAAIAAAAAAAFAP//AAAIAAAAAAAFAP7/AAAIAAAAAAAFAP3/AAAIAAAAAAAFAPz/AAAIAAAAAAAFAPv/AAAIAAAAAAAEAAYAAAAIAAMAAAAEAAUAAAAIAAAAAAAEAAQAAAAIAAAAAAAEAAMAAAAIAAAAAAAEAAIAAAAIAAAAAAAEAAEAAAAIAAAAAAAEAAAAAAAIAAAAAAAEAP//AAAIAAAAAAAEAP7/AAAIAAAAAAAEAP3/AAAIAAAAAAAEAPz/AAAIAAAAAAAEAPv/AAAIAAAAAAADAAYAAAAIAAMAAAADAAUAAAAIAAAAAAADAAQAAAAIAAAAAAADAAMAAAAIAAAAAAADAAIAAAAIAAAAAAADAAEAAAAIAAAAAAADAAAAAAAIAAAAAAADAP//AAAIAAAAAAADAP7/AAAIAAAAAAADAP3/AAAIAAAAAAADAPz/AAAIAAAAAAADAPv/AAAIAAAAAAACAAYAAAAIAAMAAAACAAUAAAAIAAAAAAACAAQAAAAIAAAAAAACAAMAAAAIAAAAAAACAAIAAAAIAAAAAAACAAEAAAAIAAAAAAACAAAAAAAIAAAAAAACAP//AAAIAAAAAAACAP7/AAAIAAAAAAACAP3/AAAIAAAAAAACAPz/AAAIAAAAAAACAPv/AAAIAAAAAAABAP3/AAAIAAAAAAABAPz/AAAIAAAAAAABAPv/AAAIAAAAAAD///r/AAAIAAAAAAD+//r/AAAIAAAAAAD9//r/AAAIAAAAAAD8//r/AAAIAAAAAAD7//r/AAAIAAAAAAD6//r/AAAIAAAAAAD5//r/AAAIAAAAAAD4//r/AAAIAAAAAAD3//r/AAAIAAAAAAD2//r/AAAIAAAAAAD1//r/AAAIAAAAAAD0//r/AAAIAAAAAADz//r/AAAHABEAAAANAPr/AAAHABAAAAAMAPr/AAAIAAAAAAALAPr/AAAIAAAAAAAKAPr/AAAIAAAAAAAJAPr/AAAIAAAAAAAIAPr/AAAIAAAAAAAHAPr/AAAIAAAAAAAGAPr/AAAIAAAAAAAFAPr/AAAIAAAAAAAEAPr/AAAIAAAAAAADAPr/AAAIAAAAAAACAPr/AAAIAAAAAAABAPr/AAAIAAAAAAANAPn/AAAHAA0AAAAMAPn/AAAHAA8AAAALAPn/AAAHAA8AAAAKAPn/AAAHAA8AAAAJAPn/AAAHAA8AAAAIAPn/AAAHAA8AAAAHAPn/AAAHAA8AAAAGAPn/AAAHAA8AAAAFAPn/AAAHAA8AAAAEAPn/AAAHAA8AAAADAPn/AAAHAA8AAAACAPn/AAAHAA8AAAABAPn/AAAHAA8AAAAAAPn/AAAHAA8AAAD///n/AAAHAA8AAAD+//n/AAAHAA8AAAD9//n/AAAHAA8AAAD8//n/AAAHAA8AAAD7//n/AAAHAA8AAAD6//n/AAAHAA8AAAD5//n/AAAHAA8AAAD4//n/AAAHAA8AAAD3//n/AAAHAA8AAAD2//n/AAAHAA8AAAD1//n/AAAHAA8AAAD0//n/AAAHAA8AAADz//n/AAAHAA4AAADx/wUAAAAHAAMAAADw/wUAAAAHAAcAAADv/wIAAAAIAAQAAADx/wAAAAAIAAQAAAAAAP3/AAAIAAMAAAAAAPz/AAAIAAAAAAAAAPv/AAAIAAAAAAAAAPr/AAAIAAAAAAA=")
+
+[node name="PurpleTiles" parent="." instance=ExtResource("2_0sogr")]
+tile_map_data = PackedByteArray("AAAAAAAAAAAFAAMAAAAAAAEAAAAFAAUAAAD4/wkAAAAFAAMAAAD4/woAAAAFAAUAAAD0/wkAAAAFAAMAAAD0/woAAAAFAAUAAADw/wQAAAAGAAoAAADx/wQAAAAGAAkAAADx/wMAAAAGAAYAAADw/wMAAAAGAAcAAADx/wIAAAAGAAMAAADw/wIAAAAGAAQAAAA=")
+
+[node name="PinkTiles" parent="." instance=ExtResource("3_5brs8")]
+tile_map_data = PackedByteArray("AAAAAAUAAAADAAsAAAAAAAYAAAADAA0AAAD2/wkAAAADAAsAAAD2/woAAAADAA0AAAD6/wkAAAADAAsAAAD6/woAAAADAA0AAADy/woAAAADAA0AAADy/wkAAAADAAsAAADv/wcAAAAFAAAAAADw/wcAAAAIAAEAAADw/wYAAAAEAA0AAADv/wUAAAADAAsAAADv/wYAAAAEAA8AAADx/wYAAAAEAAEAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("4_qgpl5")]
+position = Vector2(-736, 528)
+
+[node name="Spawn" parent="." instance=ExtResource("5_so18s")]
+position = Vector2(32, -48)
+
+[node name="PurplePlatform" type="AnimatableBody2D" parent="."]
+position = Vector2(288, 800)
+script = ExtResource("5_lfbxl")
+team = "Purple"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PurplePlatform"]
+position = Vector2(0, -32)
+shape = ExtResource("6_v72e1")
+
+[node name="Sprite2D" type="Sprite2D" parent="PurplePlatform"]
+position = Vector2(0, -64)
+texture = ExtResource("8_jld50")
+
+[node name="Sprite2D2" type="Sprite2D" parent="PurplePlatform"]
+texture = ExtResource("9_svocn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="PurplePlatform"]
+visible = false
+position = Vector2(64, 0)
+texture = ExtResource("8_hg5yk")
+
+[node name="Sprite2D4" type="Sprite2D" parent="PurplePlatform"]
+visible = false
+texture = ExtResource("9_jld50")
+
+[node name="SolidFadingPlatform" parent="." instance=ExtResource("5_0sogr")]
+position = Vector2(-992, 672)
+collision_priority = 0.2
+fadeable = true
+
+[node name="Sprite2D" parent="SolidFadingPlatform" index="1"]
+texture = ExtResource("13_xrw8b")
+
+[node name="Sprite2D2" parent="SolidFadingPlatform" index="2"]
+texture = ExtResource("14_jtuoa")
+
+[node name="Sprite2D3" parent="SolidFadingPlatform" index="3"]
+texture = ExtResource("15_cajnr")
+
+[node name="FadeTimer" type="Timer" parent="SolidFadingPlatform"]
+process_callback = 0
+wait_time = 3.0
+one_shot = true
+
+[node name="FadingPlatformArea2D" type="Area2D" parent="SolidFadingPlatform"]
+position = Vector2(0, -48)
+
+[node name="FadingPlatformCollisionShape2D" type="CollisionShape2D" parent="SolidFadingPlatform/FadingPlatformArea2D"]
+shape = SubResource("RectangleShape2D_xrw8b")
+
+[node name="SolidFadingPlatform2" parent="." instance=ExtResource("5_0sogr")]
+position = Vector2(-992, 864)
+collision_priority = 0.2
+
+[node name="Sprite2D" parent="SolidFadingPlatform2" index="1"]
+texture = ExtResource("13_xrw8b")
+
+[node name="Sprite2D2" parent="SolidFadingPlatform2" index="2"]
+texture = ExtResource("14_jtuoa")
+
+[node name="Sprite2D3" parent="SolidFadingPlatform2" index="3"]
+texture = ExtResource("15_cajnr")
+
+[node name="FadeTimer" type="Timer" parent="SolidFadingPlatform2"]
+process_callback = 0
+wait_time = 3.0
+one_shot = true
+
+[node name="FadingPlatformArea2D2" type="Area2D" parent="SolidFadingPlatform2"]
+position = Vector2(0, -48)
+
+[node name="FadingPlatformCollisionShape2D" type="CollisionShape2D" parent="SolidFadingPlatform2/FadingPlatformArea2D2"]
+shape = SubResource("RectangleShape2D_xrw8b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hg5yk")
+}
+autoplay = "move_level4"
+
+[node name="NextLevel" parent="." instance=ExtResource("12_hg5yk")]
+position = Vector2(864, -512)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3k6h0"),
+&"move_solid": SubResource("AnimationLibrary_cajnr")
+}
+
+[connection signal="body_entered" from="SolidFadingPlatform/FadingPlatformArea2D" to="Player" method="_on_fading_platform_area_2d_body_entered"]
+[connection signal="body_entered" from="SolidFadingPlatform/FadingPlatformArea2D" to="SolidFadingPlatform" method="_on_fading_platform_area_2d_body_entered"]
+
+[editable path="SolidFadingPlatform"]
+[editable path="SolidFadingPlatform2"]

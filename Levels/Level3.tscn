@@ -1,10 +1,125 @@
-[gd_scene load_steps=6 format=4 uid="uid://quws45k5cyv5"]
+[gd_scene load_steps=14 format=4 uid="uid://quws45k5cyv5"]
 
 [ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://components/solid_tiles.tscn" id="1_xb24h"]
 [ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://components/purple_tiles.tscn" id="2_8eiv4"]
 [ext_resource type="PackedScene" uid="uid://e4to6uptjsru" path="res://components/player.tscn" id="2_jon3f"]
 [ext_resource type="PackedScene" uid="uid://d6gwv8im0fg5" path="res://components/pink_tiles.tscn" id="3_yd8fq"]
 [ext_resource type="PackedScene" uid="uid://b8w8wdhrgcp44" path="res://components/spawn.tscn" id="5_yd8fq"]
+[ext_resource type="PackedScene" uid="uid://cafyswoygpwvy" path="res://components/next_level.tscn" id="6_hy5j1"]
+[ext_resource type="PackedScene" uid="uid://b4pa8nc7nps5m" path="res://components/purple_obstacle.tscn" id="6_vybwq"]
+[ext_resource type="Texture2D" uid="uid://b44upqoeuiqj4" path="res://sprites/pink_terrain/terrain-pink-horizontal-left.png" id="7_q5lgr"]
+[ext_resource type="Texture2D" uid="uid://b8qn3rkthrosa" path="res://sprites/pink_terrain/terrain-pink-horizontal-middle.png" id="8_hy5j1"]
+[ext_resource type="Texture2D" uid="uid://myk2rligo0p4" path="res://sprites/pink_terrain/terrain-pink-horizontal-right.png" id="9_xxxi4"]
+
+[sub_resource type="Animation" id="Animation_4cgce"]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PurplePlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(416, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PurplePlatform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1184, -32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PinkPlatform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2656, -96)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PinkPlatform2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3360, -96)]
+}
+
+[sub_resource type="Animation" id="Animation_vybwq"]
+resource_name = "move"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PurplePlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(416, -32), Vector2(-288, -32), Vector2(416, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PurplePlatform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1152, -32), Vector2(1824, -32), Vector2(1152, -32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PinkPlatform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2656, -96), Vector2(2176, -96), Vector2(2656, -96)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PinkPlatform2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3040, -96), Vector2(3360, -96), Vector2(3040, -96)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4cgce"]
+_data = {
+&"RESET": SubResource("Animation_4cgce"),
+&"move_level3": SubResource("Animation_vybwq")
+}
 
 [node name="Level3" type="Node2D"]
 
@@ -12,13 +127,63 @@
 tile_map_data = PackedByteArray("AAAZAP//AAARAAgAAAAAAAAAAAAHAA8AAAABAAAAAAAHAA8AAAABAAEAAAAIAAMAAAAAAAEAAAAIAAMAAAACAAAAAAAHAA8AAAACAAEAAAAIAAEAAAD//wAAAAAHAA8AAAD//wEAAAAIAAIAAAADAAAAAAAHAAQAAAD+/wAAAAAHAAUAAAA=")
 
 [node name="PurpleTiles" parent="." instance=ExtResource("2_8eiv4")]
+tile_map_data = PackedByteArray("AAA7AP7/AAAGAAUAAAA8AP7/AAAGAAMAAAA8AP//AAAGAAkAAAA7AP//AAAGAAsAAAA6AP7/AAAGAAQAAAA6AP//AAAGAAoAAAA=")
 
 [node name="PinkTiles" parent="." instance=ExtResource("3_yd8fq")]
+tile_map_data = PackedByteArray("AAALAAAAAAAEAAUAAAAMAAAAAAAEAAQAAAANAAAAAAAEAAQAAAAOAAAAAAAEAAEAAAAsAP3/AAADAA0AAAAsAPz/AAADAAwAAAAsAPv/AAADAAwAAAAsAPr/AAADAAsAAAA=")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_jon3f")]
-position = Vector2(64, -64)
+[node name="Player" parent="." instance=ExtResource("2_jon3f")]
+position = Vector2(64, -48)
 
 [node name="Spawn" parent="." instance=ExtResource("5_yd8fq")]
 position = Vector2(64, -64)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="NextLevel" parent="." instance=ExtResource("6_hy5j1")]
+position = Vector2(3872, -192)
+team = "Purple"
+
+[node name="PurplePlatform" parent="." instance=ExtResource("6_vybwq")]
+position = Vector2(416, -32)
+team = "Purple"
+
+[node name="PurplePlatform2" parent="." instance=ExtResource("6_vybwq")]
+position = Vector2(1184, -32)
+team = "Purple"
+
+[node name="PinkPlatform" parent="." instance=ExtResource("6_vybwq")]
+position = Vector2(2656, -96)
+team = "Pink"
+
+[node name="Sprite2D" parent="PinkPlatform" index="1"]
+texture = ExtResource("7_q5lgr")
+
+[node name="Sprite2D2" parent="PinkPlatform" index="2"]
+texture = ExtResource("8_hy5j1")
+
+[node name="Sprite2D3" parent="PinkPlatform" index="3"]
+texture = ExtResource("9_xxxi4")
+
+[node name="PinkPlatform2" parent="." instance=ExtResource("6_vybwq")]
+position = Vector2(3360, -96)
+team = "Pink"
+
+[node name="Sprite2D" parent="PinkPlatform2" index="1"]
+texture = ExtResource("7_q5lgr")
+
+[node name="Sprite2D2" parent="PinkPlatform2" index="2"]
+texture = ExtResource("8_hy5j1")
+
+[node name="Sprite2D3" parent="PinkPlatform2" index="3"]
+texture = ExtResource("9_xxxi4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4cgce")
+}
+autoplay = "move_level3"
+
+[connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
+
+[editable path="NextLevel"]
+[editable path="PinkPlatform"]
+[editable path="PinkPlatform2"]

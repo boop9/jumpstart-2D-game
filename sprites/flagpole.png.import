@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7xv3okv041us"
-path="res://.godot/imported/tile_0395.png-c7fda7f4b24400a92e6812d9211063bd.ctex"
+uid="uid://bn4l08josgq54"
+path="res://.godot/imported/flagpole.png-8c5452dd6a3fffc4377066d32e184097.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tile_0395.png"
-dest_files=["res://.godot/imported/tile_0395.png-c7fda7f4b24400a92e6812d9211063bd.ctex"]
+source_file="res://sprites/flagpole.png"
+dest_files=["res://.godot/imported/flagpole.png-8c5452dd6a3fffc4377066d32e184097.ctex"]
 
 [params]
 

@@ -11,23 +11,23 @@
 metadata/Level = 2
 
 [node name="SolidTiles" parent="." instance=ExtResource("3_nn734")]
-tile_map_data = PackedByteArray("AAAZAP//AAARAAgAAADw//7/AAAHAA4AAADw////AAAIAAIAAADx////AAAIAAMAAADy////AAAIAAEAAADy//7/AAAHAA8AAADx//7/AAAHAA8AAADz//7/AAAHAAQAAAA=")
+tile_map_data = PackedByteArray("AAAZAP//AAARAAgAAADw//7/AAAHAA0AAADw////AAAIAAEAAADv//7/AAAHAA8AAADu//7/AAAHAA8AAADu////AAAIAAIAAADv////AAAIAAMAAADt//7/AAAHAAUAAAA=")
 
 [node name="PurpleTiles" parent="." instance=ExtResource("2_506po")]
-tile_map_data = PackedByteArray("AAAAAAAAAAAFAA8AAAABAAAAAAAFAA4AAAACAAAAAAAFAA4AAAADAAAAAAAFAAsAAAAFAP//AAAFAAQAAAAFAP7/AAAFAAMAAAAFAAAAAAAFAAUAAAACAP3/AAAGAAwAAAD3//j/AAAFAA4AAAD4//j/AAAFAA4AAAD5//j/AAAFAA4AAAD6//j/AAAFAA4AAAD7//j/AAAFAA4AAAD8//j/AAAFAA4AAAD9//j/AAAFAA4AAAD+//j/AAAFAAsAAAD2//j/AAAFAA8AAAA=")
+tile_map_data = PackedByteArray("AAD2//j/AAAFAA8AAAD3//j/AAAFAA4AAAD4//j/AAAFAA4AAAD5//j/AAAFAA4AAAD6//j/AAAFAA4AAAD7//j/AAAFAA4AAAD8//j/AAAFAA4AAAD9//j/AAAFAA4AAAD+//j/AAAFAAsAAAAAAAAAAAAFAA8AAAABAAAAAAAFAA4AAAACAAAAAAAFAA4AAAADAAAAAAAFAAsAAAAFAAAAAAAFAAUAAAAFAP//AAAFAAQAAAAFAP7/AAAFAAMAAAACAP3/AAAGAAwAAAA=")
 
 [node name="PinkTiles" parent="." instance=ExtResource("2_wcc2u")]
-tile_map_data = PackedByteArray("AAAIAP//AAAEAAEAAAD+//z/AAAFAAIAAAAHAP//AAAEAAUAAAD9//v/AAADAA0AAAD9//r/AAADAAwAAAD9//n/AAADAAsAAAD7//z/AAAFAAIAAAD5//v/AAADAA0AAAD5//r/AAADAAwAAAD5//n/AAADAAsAAAD3//z/AAAFAAIAAAA=")
+tile_map_data = PackedByteArray("AAD2//z/AAAFAAIAAAD5//z/AAAFAAIAAAD3//r/AAAFAAAAAAD4//r/AAAEABEAAAD4//n/AAAEAAsAAAD3//n/AAAEAAwAAAD8//n/AAAEAAsAAAD8//r/AAAEABEAAAD7//r/AAAFAAAAAAD7//n/AAAEAAwAAAD+//z/AAAFAAIAAAAHAP//AAAEAAUAAAAIAP//AAAEAAEAAAA=")
 
 [node name="NextLevel" parent="." instance=ExtResource("6_jglcl")]
-position = Vector2(-984, -192)
+position = Vector2(-1176, -192)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_lfj2m")]
-position = Vector2(64, -64)
+[node name="Player" parent="." instance=ExtResource("1_lfj2m")]
+position = Vector2(64, -48)
 
 [node name="Spawn" parent="." instance=ExtResource("5_v115i")]
 position = Vector2(64, -64)
 
-[connection signal="body_entered" from="NextLevel" to="CharacterBody2D" method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
 
-[editable path="CharacterBody2D"]
+[editable path="Player"]

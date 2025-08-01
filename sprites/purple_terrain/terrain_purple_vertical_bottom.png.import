@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn4l08josgq54"
-path="res://.godot/imported/flagpole.png-d6baabf2c97426939924275082468483.ctex"
+uid="uid://caktxnevpv07h"
+path="res://.godot/imported/terrain_purple_vertical_bottom.png-3bb693328eaadc0f0c595659a6c63c56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/flagpole.png"
-dest_files=["res://.godot/imported/flagpole.png-d6baabf2c97426939924275082468483.ctex"]
+source_file="res://sprites/purple_terrain/terrain_purple_vertical_bottom.png"
+dest_files=["res://.godot/imported/terrain_purple_vertical_bottom.png-3bb693328eaadc0f0c595659a6c63c56.ctex"]
 
 [params]
 

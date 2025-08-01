@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b516nthbaqej5"
-path="res://.godot/imported/spritesheet-tiles-colorshifted.png-8e0e3d86605509f7c624714c566a12a5.ctex"
+uid="uid://c8vahsisl66ro"
+path="res://.godot/imported/terrain-pink-vertical-bottom.png-bd111a9b2851f4b3c41260867c7ce991.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spritesheets/background/spritesheet-tiles-colorshifted.png"
-dest_files=["res://.godot/imported/spritesheet-tiles-colorshifted.png-8e0e3d86605509f7c624714c566a12a5.ctex"]
+source_file="res://sprites/pink_terrain/terrain-pink-vertical-bottom.png"
+dest_files=["res://.godot/imported/terrain-pink-vertical-bottom.png-bd111a9b2851f4b3c41260867c7ce991.ctex"]
 
 [params]
 

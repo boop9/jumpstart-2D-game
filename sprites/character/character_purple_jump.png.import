@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqgrh71b4n4i1"
-path="res://.godot/imported/tile_0342.png-47f78899e5e495d0119cee24d81765da.ctex"
+uid="uid://cgyv4pirovi57"
+path="res://.godot/imported/character_purple_jump.png-9cc942c651b27fdd252bf392c2e27121.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tile_0342.png"
-dest_files=["res://.godot/imported/tile_0342.png-47f78899e5e495d0119cee24d81765da.ctex"]
+source_file="res://sprites/character/character_purple_jump.png"
+dest_files=["res://.godot/imported/character_purple_jump.png-9cc942c651b27fdd252bf392c2e27121.ctex"]
 
 [params]
 

@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://e4to6uptjsru"]
+[gd_scene load_steps=9 format=3 uid="uid://e4to6uptjsru"]
 
 [ext_resource type="Script" uid="uid://bfhxy7ckj4qf5" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://levew53vdbgn" path="res://spritesheets/character/icon.svg" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://dr32hy1f5r10q" path="res://sprites/character/character_purple_walk_a.png" id="3_5odhx"]
+[ext_resource type="Texture2D" uid="uid://b4ekql8f43sxg" path="res://sprites/character/character_purple_walk_b.png" id="4_1kub6"]
+[ext_resource type="Texture2D" uid="uid://d102ig5bkrtk4" path="res://sprites/character/character_purple_front.png" id="5_1kub6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(127, 127)
+size = Vector2(77.6534, 97.7362)
 
 [sub_resource type="GDScript" id="GDScript_onrkg"]
 script/source = "extends Camera2D
@@ -27,20 +30,57 @@ func _on_character_body_2d_my_signal() -> void:
 	cutscene_recenter(node,3)
 "
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_51jd6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1kub6")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.6,
+"texture": ExtResource("3_5odhx")
+}, {
+"duration": 1.6,
+"texture": ExtResource("4_1kub6")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1kub6")
+}],
+"loop": true,
+"name": &"still",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.746908, 0.746908)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
+position = Vector2(0, 15.3968)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-64, 64)
+position = Vector2(0, 64.2649)
 position_smoothing_enabled = true
 position_smoothing_speed = 16.0
 script = SubResource("GDScript_onrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_51jd6")
+animation = &"jump"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gj1llawck1pc"
-path="res://.godot/imported/tile_0088.png-157b918821220347e4b8babf3426fc4a.ctex"
+uid="uid://ulxpt7a7edix"
+path="res://.godot/imported/terrain-pink-block.png-230fb03fa00cf69db3cc29bbb8fc17d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tile_0088.png"
-dest_files=["res://.godot/imported/tile_0088.png-157b918821220347e4b8babf3426fc4a.ctex"]
+source_file="res://sprites/pink_terrain/terrain-pink-block.png"
+dest_files=["res://.godot/imported/terrain-pink-block.png-230fb03fa00cf69db3cc29bbb8fc17d5.ctex"]
 
 [params]
 
