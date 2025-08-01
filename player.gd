@@ -6,21 +6,27 @@ const JUMP_VELOCITY := -420.0
 @onready var camera = find_child("Camera2D")
 @onready var end = $"../End"
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var jumpedOnPlatform = false
+@onready var animationplayer = $"../move_solid_platforms"
+@onready var fade_animationplayer = $"../fade"
 @onready var platformVel = Vector2(0,0)
-@onready var animationplayer = $"../AnimationPlayer2"
+@onready var jumpedOnPlatform = false 
+@onready var amountoftimessteppedonfadingplatform = 0
 
 
 func _ready():
 	pass
 
 func reset():
+	get_tree().reload_current_scene()
+
+func reset_old():
 	var speed = camera.position_smoothing_speed
 	camera.position_smoothing_speed = 30
 	if spawn:
 		self.position = spawn.position
 	await get_tree().create_timer(1).timeout;
 	camera.position_smoothing_speed = speed
+
 
 func _process(_delta:float) -> void:
 	if Input.is_action_just_pressed("reset"):
@@ -31,22 +37,22 @@ func _process(_delta:float) -> void:
 		if Input.is_action_pressed("right"):
 			animated_sprite.flip_h = false
 			animated_sprite.play("run")
-			print("run right")
+#			print("run right")
 		elif Input.is_action_pressed("left"):
 			animated_sprite.flip_h = true
 			animated_sprite.play("run")
-			print("run left")
+#			print("run left")
 		else:
 			animated_sprite.play("still")
 	else:
 		if Input.is_action_pressed("right"):
 			animated_sprite.flip_h = false
 			animated_sprite.play("jump")
-			print("jump right")
+#			print("jump right")
 		elif Input.is_action_pressed("left"):
 			animated_sprite.flip_h = true
 			animated_sprite.play("jump")
-			print("jump left")
+#			print("jump left")
 
 
 
@@ -84,17 +90,22 @@ func _physics_process(delta: float) -> void:
 func _on_next_level_body_entered(body: Node2D) -> void:
 	Global.next_level()
 
-func fade(node):
-	pass
-
 func _on_fading_platform_area_2d_body_entered(body: Node2D) -> void:
-	if body == self:
-		animationplayer.play("move_solid/move_solid")
-	print(body)
+	amountoftimessteppedonfadingplatform += 1
+	if amountoftimessteppedonfadingplatform <= 1:
+		if body == self:
+			animationplayer.play("move_solid/move_solid")
+			fade_animationplayer.play("fade/fade")
 
+func die():
+	reset()
+	Global.death_count += 1
+	print ("deaths: ", Global.death_count)
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body == self:
-		reset()
-		Global.death_count += 1
-		print ("deaths: ", Global.death_count)
+		die()
+
+
+func _on_spike_body_entered(body: Node2D) -> void:
+	die()
