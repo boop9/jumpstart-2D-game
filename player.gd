@@ -18,6 +18,7 @@ func _ready():
 
 func reset():
 	get_tree().reload_current_scene()
+	Global.switchState = true
 
 func reset_old():
 	var speed = camera.position_smoothing_speed
@@ -92,9 +93,11 @@ func _on_next_level_body_entered(body: Node2D) -> void:
 
 func _on_fading_platform_area_2d_body_entered(body: Node2D) -> void:
 	amountoftimessteppedonfadingplatform += 1
-	if amountoftimessteppedonfadingplatform <= 1:
+	if not animationplayer.is_playing():
 		if body == self:
 			animationplayer.play("move_solid/move_solid")
+	elif not fade_animationplayer.is_playing():
+		if body == self:
 			fade_animationplayer.play("fade/fade")
 
 func die():
@@ -105,7 +108,9 @@ func die():
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body == self:
 		die()
-
+		print("vas")
 
 func _on_spike_body_entered(body: Node2D) -> void:
-	die()
+	if body == self:
+		die()
+		print("huh")

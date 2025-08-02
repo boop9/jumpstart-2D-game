@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cy71uq5jv3r4i"]
+[gd_scene load_steps=8 format=4 uid="uid://cy71uq5jv3r4i"]
 
 [ext_resource type="PackedScene" uid="uid://e4to6uptjsru" path="res://components/player.tscn" id="1_lfj2m"]
 [ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://components/purple_tiles.tscn" id="2_506po"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://components/solid_tiles.tscn" id="3_nn734"]
 [ext_resource type="PackedScene" uid="uid://b8w8wdhrgcp44" path="res://components/spawn.tscn" id="5_v115i"]
 [ext_resource type="PackedScene" uid="uid://cafyswoygpwvy" path="res://components/next_level.tscn" id="6_jglcl"]
+[ext_resource type="PackedScene" uid="uid://dhklmly74win1" path="res://components/killzone.tscn" id="7_w0h0a"]
 
 [node name="Level2" type="Node2D"]
 metadata/Level = 2
@@ -27,6 +28,9 @@ position = Vector2(64, -48)
 
 [node name="Spawn" parent="." instance=ExtResource("5_v115i")]
 position = Vector2(64, -64)
+
+[node name="Killzone" parent="." instance=ExtResource("7_w0h0a")]
+position = Vector2(16, -128)
 
 [connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
 

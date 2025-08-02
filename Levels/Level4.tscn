@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bcotik5kvi7y0"]
+[gd_scene load_steps=33 format=4 uid="uid://bcotik5kvi7y0"]
 
 [ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://components/solid_tiles.tscn" id="1_2qv2g"]
 [ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://components/purple_tiles.tscn" id="2_0sogr"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://o1kckxyfktfk" path="res://sprites/solid_terrain/terrain_grass_horizontal_middle.png" id="14_jtuoa"]
 [ext_resource type="Texture2D" uid="uid://cbj1dbu6h7fv" path="res://sprites/solid_terrain/terrain_grass_horizontal_right.png" id="15_cajnr"]
 [ext_resource type="PackedScene" uid="uid://dh3sv1axesr0o" path="res://components/spikes.tscn" id="17_jtuoa"]
+[ext_resource type="PackedScene" uid="uid://dhklmly74win1" path="res://components/killzone.tscn" id="18_cajnr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrw8b"]
 size = Vector2(176, 20)
@@ -196,7 +197,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fmter"]
@@ -214,10 +215,10 @@ tracks/0/path = NodePath("SolidFadingPlatform:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.4, 1.8, 2.1, 2.4, 3, 5.83333, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.4, 1.8, 2.1, 2.4, 2.6, 2.8, 3, 5.83333, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nojkj"]
@@ -268,7 +269,6 @@ visible = false
 texture = ExtResource("9_jld50")
 
 [node name="SolidFadingPlatform" parent="." instance=ExtResource("5_0sogr")]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(-992, 672)
 collision_priority = 0.2
 fadeable = true
@@ -418,7 +418,14 @@ rotation = 1.5708
 position = Vector2(-1120, -352)
 rotation = 1.5708
 
+[node name="Killzone" parent="." instance=ExtResource("18_cajnr")]
+position = Vector2(-576, 640)
+
+[node name="CollisionShape2D" parent="Killzone" index="0"]
+position = Vector2(216, 540)
+
 [connection signal="body_entered" from="SolidFadingPlatform/FadingPlatformArea2D" to="Player" method="_on_fading_platform_area_2d_body_entered"]
+[connection signal="animation_started" from="fade" to="SolidFadingPlatform" method="_on_fade_animation_started"]
 [connection signal="body_entered" from="spike2" to="Player" method="_on_spike_body_entered"]
 [connection signal="body_entered" from="spike3" to="Player" method="_on_spike_body_entered"]
 [connection signal="body_entered" from="spike4" to="Player" method="_on_spike_body_entered"]
@@ -439,6 +446,8 @@ rotation = 1.5708
 [connection signal="body_entered" from="spike19" to="Player" method="_on_spike_body_entered"]
 [connection signal="body_entered" from="spike20" to="Player" method="_on_spike_body_entered"]
 [connection signal="body_entered" from="spike21" to="Player" method="_on_spike_body_entered"]
+[connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
 
 [editable path="SolidFadingPlatform"]
 [editable path="SolidFadingPlatform2"]
+[editable path="Killzone"]

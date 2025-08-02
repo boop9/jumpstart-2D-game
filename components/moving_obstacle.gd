@@ -13,5 +13,10 @@ func fade(time):
 	pass
 
 
-func _on_platform_fade_animation_finished(anim_name: StringName) -> void:
-	self.visible = false
+func _on_fade_animation_finished(anim_name: StringName) -> void:
+	self.set_collision_layer_value(1,true)
+
+
+func _on_fade_animation_started(anim_name: StringName) -> void:
+	await get_tree().create_timer(3).timeout
+	self.set_collision_layer_value(1, false	)

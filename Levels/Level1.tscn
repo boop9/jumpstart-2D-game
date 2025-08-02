@@ -10,9 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://k8jv8lqxg4i0" path="res://sprites/input_icons/tile_0123.png" id="8_p5226"]
 [ext_resource type="Texture2D" uid="uid://cqgrh71b4n4i1" path="res://sprites/input_icons/tile_0342.png" id="9_tuji2"]
 [ext_resource type="Texture2D" uid="uid://gj1llawck1pc" path="res://sprites/input_icons/tile_0088.png" id="10_f5cpa"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fl83"]
-size = Vector2(3120, 440)
+[ext_resource type="PackedScene" uid="uid://dhklmly74win1" path="res://components/killzone.tscn" id="11_p5226"]
 
 [node name="Level1" type="Node2D"]
 metadata/Level = 1
@@ -88,13 +86,8 @@ text = "Switch Platforms
 
 Reset"
 
-[node name="Killzone" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(472, 540)
-shape = SubResource("RectangleShape2D_7fl83")
+[node name="Killzone" parent="." instance=ExtResource("11_p5226")]
 
 [connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
-[connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
 
 [editable path="NextLevel"]

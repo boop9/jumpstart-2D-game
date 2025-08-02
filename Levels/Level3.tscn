@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://quws45k5cyv5"]
+[gd_scene load_steps=15 format=4 uid="uid://quws45k5cyv5"]
 
 [ext_resource type="PackedScene" uid="uid://dqbxfsatf38jo" path="res://components/solid_tiles.tscn" id="1_xb24h"]
 [ext_resource type="PackedScene" uid="uid://ctj5sd2geto28" path="res://components/purple_tiles.tscn" id="2_8eiv4"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b44upqoeuiqj4" path="res://sprites/pink_terrain/terrain-pink-horizontal-left.png" id="7_q5lgr"]
 [ext_resource type="Texture2D" uid="uid://b8qn3rkthrosa" path="res://sprites/pink_terrain/terrain-pink-horizontal-middle.png" id="8_hy5j1"]
 [ext_resource type="Texture2D" uid="uid://myk2rligo0p4" path="res://sprites/pink_terrain/terrain-pink-horizontal-right.png" id="9_xxxi4"]
+[ext_resource type="PackedScene" uid="uid://dhklmly74win1" path="res://components/killzone.tscn" id="11_xxxi4"]
 
 [sub_resource type="Animation" id="Animation_4cgce"]
 length = 4.0
@@ -181,6 +182,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_4cgce")
 }
 autoplay = "move_level3"
+
+[node name="Killzone" parent="." instance=ExtResource("11_xxxi4")]
+position = Vector2(1200, -16)
 
 [connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
 
