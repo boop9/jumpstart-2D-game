@@ -19,11 +19,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("switch"):
-		if insideSwitchableObject == false:
-			switchState = not switchState
+	pass
 
 func _physics_process(delta: float) -> void:
+	print(switchState)
+	if Input.is_action_just_pressed("switch"):
+			switchState = not switchState
+			
 	if insideSwitchableObject == true:
 		print("inside switchable object")
 	else:
@@ -58,7 +60,7 @@ func fade_in(node, speed = 1):
 	faded_in = true
 
 func switch(node : Node):
-	if insideSwitchableObject == false:
+#	if insideSwitchableObject == false:
 #		print("switched")
 		if switchState == true:
 			if node.team == "Pink":
@@ -76,7 +78,7 @@ func switch(node : Node):
 				node.collision_enabled = false
 
 func switch_alt(node : Node,layer:int,collidernode:Node = node):
-	if insideSwitchableObject == false:
+#	if insideSwitchableObject == false:
 #		print("switched")
 		if Global.switchState == true:
 			if node.team == "Pink":

@@ -117,5 +117,6 @@ Reset"
 [node name="Killzone" parent="." instance=ExtResource("11_p5226")]
 
 [connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
 
 [editable path="NextLevel"]
