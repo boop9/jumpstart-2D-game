@@ -11,14 +11,21 @@
 [node name="Level2" type="Node2D"]
 metadata/Level = 2
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2592.0
+offset_top = -1264.0
+offset_right = 2632.0
+offset_bottom = 1304.0
+color = Color(0.356863, 0.384314, 0.698039, 1)
+
 [node name="SolidTiles" parent="." instance=ExtResource("3_nn734")]
 tile_map_data = PackedByteArray("AAAZAP//AAARAAgAAADw//7/AAAHAA0AAADw////AAAIAAEAAADv//7/AAAHAA8AAADu//7/AAAHAA8AAADu////AAAIAAIAAADv////AAAIAAMAAADt//7/AAAHAAUAAAA=")
 
 [node name="PurpleTiles" parent="." instance=ExtResource("2_506po")]
-tile_map_data = PackedByteArray("AAD2//j/AAAFAA8AAAD3//j/AAAFAA4AAAD4//j/AAAFAA4AAAD5//j/AAAFAA4AAAD6//j/AAAFAA4AAAD7//j/AAAFAA4AAAD8//j/AAAFAA4AAAD9//j/AAAFAA4AAAD+//j/AAAFAAsAAAAAAAAAAAAFAA8AAAABAAAAAAAFAA4AAAACAAAAAAAFAA4AAAADAAAAAAAFAAsAAAAFAAAAAAAFAAUAAAAFAP//AAAFAAQAAAAFAP7/AAAFAAMAAAACAP3/AAAGAAwAAAA=")
+tile_map_data = PackedByteArray("AAD2//j/AQAAAAAADAD3//j/AQAAAAAADQD4//j/AQAAAAAADQD5//j/AQAAAAAADQD6//j/AQAAAAAADQD7//j/AQAAAAAADQD8//j/AQAAAAAADQD9//j/AQAAAAAADQD+//j/AQAAAAAADgAAAAAAAQAAAAAADAABAAAAAQAAAAAADQACAAAAAQAAAAAADQADAAAAAQAAAAAADgAFAAAAAQAAAAAADwAFAP//AQAAAAAAEAAFAP7/AQAAAAAAEQACAP3/AQAAAAAAAgA=")
 
 [node name="PinkTiles" parent="." instance=ExtResource("2_wcc2u")]
-tile_map_data = PackedByteArray("AAD2//z/AAAFAAIAAAD5//z/AAAFAAIAAAD3//r/AAAFAAAAAAD4//r/AAAEABEAAAD4//n/AAAEAAsAAAD3//n/AAAEAAwAAAD8//n/AAAEAAsAAAD8//r/AAAEABEAAAD7//r/AAAFAAAAAAD7//n/AAAEAAwAAAD+//z/AAAFAAIAAAAHAP//AAAEAAUAAAAIAP//AAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAD2//z/AQAAAAAAAQD5//z/AQAAAAAAAQD3//r/AQAAAAAAAwD4//r/AQAAAAAABAD4//n/AQAAAAAACgD3//n/AQAAAAAACQD8//n/AQAAAAAACgD8//r/AQAAAAAABAD7//r/AQAAAAAAAwD7//n/AQAAAAAACQD+//z/AQAAAAAAAQAHAP//AQAAAAAACwAIAP//AQAAAAAADQA=")
 
 [node name="NextLevel" parent="." instance=ExtResource("6_jglcl")]
 position = Vector2(-1176, -192)
@@ -30,8 +37,9 @@ position = Vector2(64, -48)
 position = Vector2(64, -64)
 
 [node name="Killzone" parent="." instance=ExtResource("7_w0h0a")]
-position = Vector2(16, -128)
+position = Vector2(16, 248)
 
 [connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
 
 [editable path="Player"]

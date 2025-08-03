@@ -101,7 +101,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 2, 4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(2656, -96), Vector2(2176, -96), Vector2(2656, -96)]
+"values": [Vector2(2656, -96), Vector2(2128, -96), Vector2(2656, -96)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -124,14 +124,21 @@ _data = {
 
 [node name="Level3" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1552.0
+offset_top = -1352.0
+offset_right = 5528.0
+offset_bottom = 1760.0
+color = Color(0.947613, 0.750397, 0.549755, 1)
+
 [node name="SolidTiles" parent="." instance=ExtResource("1_xb24h")]
 tile_map_data = PackedByteArray("AAAZAP//AAARAAgAAAAAAAAAAAAHAA8AAAABAAAAAAAHAA8AAAABAAEAAAAIAAMAAAAAAAEAAAAIAAMAAAACAAAAAAAHAA8AAAACAAEAAAAIAAEAAAD//wAAAAAHAA8AAAD//wEAAAAIAAIAAAADAAAAAAAHAAQAAAD+/wAAAAAHAAUAAAA=")
 
 [node name="PurpleTiles" parent="." instance=ExtResource("2_8eiv4")]
-tile_map_data = PackedByteArray("AAA7AP7/AAAGAAUAAAA8AP7/AAAGAAMAAAA8AP//AAAGAAkAAAA7AP//AAAGAAsAAAA6AP7/AAAGAAQAAAA6AP//AAAGAAoAAAA=")
+tile_map_data = PackedByteArray("AAA7AP7/AQAAAAAACQA8AP7/AQAAAAAACwA8AP//AQAAAAAABQA7AP//AQAAAAAAAwA6AP7/AQAAAAAACgA6AP//AQAAAAAABAA=")
 
 [node name="PinkTiles" parent="." instance=ExtResource("3_yd8fq")]
-tile_map_data = PackedByteArray("AAALAAAAAAAEAAUAAAAMAAAAAAAEAAQAAAANAAAAAAAEAAQAAAAOAAAAAAAEAAEAAAAsAP3/AAADAA0AAAAsAPz/AAADAAwAAAAsAPv/AAADAAwAAAAsAPr/AAADAAsAAAA=")
+tile_map_data = PackedByteArray("AAALAAAAAQAAAAAACwAMAAAAAQAAAAAADAANAAAAAQAAAAAADAAOAAAAAQAAAAAADQAsAP3/AQAAAAAADgAsAPz/AQAAAAAADwAsAPv/AQAAAAAADwAsAPr/AQAAAAAAEAA=")
 
 [node name="Player" parent="." instance=ExtResource("2_jon3f")]
 position = Vector2(64, -48)
@@ -187,7 +194,9 @@ autoplay = "move_level3"
 position = Vector2(1200, -16)
 
 [connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="Killzone" to="Player" method="_on_killzone_body_entered"]
 
 [editable path="NextLevel"]
+[editable path="PurplePlatform"]
 [editable path="PinkPlatform"]
 [editable path="PinkPlatform2"]

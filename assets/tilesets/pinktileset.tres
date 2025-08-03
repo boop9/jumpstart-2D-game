@@ -1,9 +1,28 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://ccdshsplipxbb"]
+[gd_resource type="TileSet" load_steps=22 format=3 uid="uid://ccdshsplipxbb"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxnd0g4nhc4" path="res://spritesheets/background/spritesheet-tiles-default.png" id="1_wo85t"]
+[ext_resource type="PackedScene" uid="uid://dw7yp26djsro7" path="res://assets/tiles/pink/pink_block.tscn" id="2_cvxxt"]
+[ext_resource type="PackedScene" uid="uid://cvgp3y5sbpl4l" path="res://assets/tiles/pink/pink_block_top_right.tscn" id="3_hqpa2"]
+[ext_resource type="PackedScene" uid="uid://c8qscrhw1dqpt" path="res://assets/tiles/pink/pink_horizontal_left.tscn" id="4_go3re"]
+[ext_resource type="PackedScene" uid="uid://bhg3m8yd67lp" path="res://assets/tiles/pink/pink_horizontal_middle.tscn" id="5_qggan"]
+[ext_resource type="PackedScene" uid="uid://dolawkpga3dsf" path="res://assets/tiles/pink/pink_horizontal_right.tscn" id="6_dj02v"]
+[ext_resource type="PackedScene" uid="uid://dhgvpsr5hitq5" path="res://assets/tiles/pink/pink_vertical_bottom.tscn" id="7_cqqr5"]
+[ext_resource type="PackedScene" uid="uid://b23mw5831aeup" path="res://assets/tiles/pink/pink_vertical_middle.tscn" id="8_s3r5a"]
+[ext_resource type="PackedScene" uid="uid://nytila4euy73" path="res://assets/tiles/pink/pink_vertical_top.tscn" id="9_b6e1s"]
+[ext_resource type="PackedScene" uid="uid://cs71i0dd1blda" path="res://assets/tiles/pink/pink_block_bottom.tscn" id="10_m8e5p"]
+[ext_resource type="PackedScene" uid="uid://d0tyjexgn0lcr" path="res://assets/tiles/pink/pink_block_bottom_left.tscn" id="11_5fpt1"]
+[ext_resource type="PackedScene" uid="uid://6dfl5frl74dl" path="res://assets/tiles/pink/pink_block_bottom_right.tscn" id="12_v1038"]
+[ext_resource type="PackedScene" uid="uid://br8wsa843ywqk" path="res://assets/tiles/pink/pink_block_center.tscn" id="13_rrjbj"]
+[ext_resource type="PackedScene" uid="uid://c7bfofdno7r7u" path="res://assets/tiles/pink/pink_block_left.tscn" id="14_srlyg"]
+[ext_resource type="PackedScene" uid="uid://c67f1ca0wjma1" path="res://assets/tiles/pink/pink_block_right.tscn" id="15_fg3o7"]
+[ext_resource type="PackedScene" uid="uid://cvg2vi7kw8tha" path="res://assets/tiles/pink/pink_block_top.tscn" id="16_43cm6"]
+[ext_resource type="PackedScene" uid="uid://dltguyjbpu23p" path="res://assets/tiles/pink/pink_block_top_left.tscn" id="17_1ne2p"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_pj7kw"]
 tile_data = PackedInt32Array(0, 393216, 12)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_cvxxt"]
+tile_data = PackedInt32Array(0, 1, 720896, 1, 1, 786432, 2, 1, 851968)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_wo85t")
@@ -4842,10 +4861,28 @@ texture_region_size = Vector2i(64, 64)
 15:3/0 = 0
 12:3/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wo85t"]
+scenes/1/scene = ExtResource("2_cvxxt")
+scenes/2/scene = ExtResource("10_m8e5p")
+scenes/3/scene = ExtResource("11_5fpt1")
+scenes/4/scene = ExtResource("12_v1038")
+scenes/5/scene = ExtResource("13_rrjbj")
+scenes/6/scene = ExtResource("14_srlyg")
+scenes/7/scene = ExtResource("15_fg3o7")
+scenes/8/scene = ExtResource("16_43cm6")
+scenes/9/scene = ExtResource("17_1ne2p")
+scenes/10/scene = ExtResource("3_hqpa2")
+scenes/11/scene = ExtResource("4_go3re")
+scenes/12/scene = ExtResource("5_qggan")
+scenes/13/scene = ExtResource("6_dj02v")
+scenes/14/scene = ExtResource("7_cqqr5")
+scenes/15/scene = ExtResource("8_s3r5a")
+scenes/16/scene = ExtResource("9_b6e1s")
+
 [resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_priority = 50.0
+physics_layer_0/collision_priority = 200.0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Purple Platforms"
 terrain_set_0/terrain_0/color = Color(0.835026, 0.382381, 0.759584, 1)
@@ -4854,4 +4891,6 @@ terrain_set_0/terrain_1/color = Color(0.569897, 0.344523, 0.586201, 1)
 custom_data_layer_0/name = "LevelEnd"
 custom_data_layer_0/type = 0
 sources/0 = SubResource("TileSetAtlasSource_0xm2m")
+sources/1 = SubResource("TileSetScenesCollectionSource_wo85t")
 pattern_0 = SubResource("TileMapPattern_pj7kw")
+pattern_1 = SubResource("TileMapPattern_cvxxt")

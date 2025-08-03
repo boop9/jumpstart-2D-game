@@ -72,7 +72,6 @@ texture = ExtResource("2_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15.3968)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -83,4 +82,4 @@ script = SubResource("GDScript_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_51jd6")
-animation = &"jump"
+animation = &"run"

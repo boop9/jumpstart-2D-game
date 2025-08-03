@@ -1,12 +1,31 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://di55kwpaogdim"]
+[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://di55kwpaogdim"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxnd0g4nhc4" path="res://spritesheets/background/spritesheet-tiles-default.png" id="1_toqeb"]
+[ext_resource type="PackedScene" uid="uid://dfcihqllere70" path="res://assets/tiles/purple/purple_block.tscn" id="2_jndha"]
+[ext_resource type="PackedScene" uid="uid://xac4vyp0tviv" path="res://assets/tiles/purple/purple_block_top_left.tscn" id="2_ulx63"]
+[ext_resource type="PackedScene" uid="uid://cuvg8gfdueqsq" path="res://assets/tiles/purple/purple_block_top_right.tscn" id="3_0q5x7"]
+[ext_resource type="PackedScene" uid="uid://dyms8omgeqbe3" path="res://assets/tiles/purple/purple_horizontal_left.tscn" id="4_etneu"]
+[ext_resource type="PackedScene" uid="uid://bidmdwnnr2jtc" path="res://assets/tiles/purple/purple_horizontal_middle.tscn" id="5_1ovbt"]
+[ext_resource type="PackedScene" uid="uid://bvybbw6j8rr72" path="res://assets/tiles/purple/purple_horizontal_right.tscn" id="6_0ayq7"]
+[ext_resource type="PackedScene" uid="uid://cxnro3ha654f1" path="res://assets/tiles/purple/purple_vertical_bottom.tscn" id="7_h40c4"]
+[ext_resource type="PackedScene" uid="uid://bdp7dccy524cv" path="res://assets/tiles/purple/purple_vertical_middle.tscn" id="8_vlead"]
+[ext_resource type="PackedScene" uid="uid://b4tpoefgpb4su" path="res://assets/tiles/purple/purple_vertical_top.tscn" id="9_c8t4k"]
+[ext_resource type="PackedScene" uid="uid://bkwbybn8bbhxh" path="res://assets/tiles/purple/purple_block_bottom.tscn" id="11_vxwga"]
+[ext_resource type="PackedScene" uid="uid://ddojup0wr13mp" path="res://assets/tiles/purple/purple_block_bottom_left.tscn" id="12_lvbi0"]
+[ext_resource type="PackedScene" uid="uid://ccnu5fwh13vaf" path="res://assets/tiles/purple/purple_block_bottom_right.tscn" id="13_02h5i"]
+[ext_resource type="PackedScene" uid="uid://cb680qxm05mja" path="res://assets/tiles/purple/purple_block_center.tscn" id="14_glu0y"]
+[ext_resource type="PackedScene" uid="uid://bw2tj1jab8yk1" path="res://assets/tiles/purple/purple_block_left.tscn" id="15_ja24i"]
+[ext_resource type="PackedScene" uid="uid://cwbqgmep7bcxg" path="res://assets/tiles/purple/purple_block_right.tscn" id="16_cwg3a"]
+[ext_resource type="PackedScene" uid="uid://cscjereachkft" path="res://assets/tiles/purple/purple_block_top.tscn" id="17_ppbya"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_pj7kw"]
 tile_data = PackedInt32Array(0, 393216, 12)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_toqeb"]
 tile_data = PackedInt32Array(786432, 458752, 14, 851968, 458752, 17, 917504, 458752, 17, 983040, 458752, 17, 1048576, 458752, 17, 1114112, 458752, 17, 1179648, 524288, 2, 1, 196608, 2, 65537, 196608, 5, 131073, 196608, 5, 196609, 196608, 5, 262145, 196608, 5, 327681, 196608, 5, 393217, 196608, 5, 458753, 196608, 5, 524289, 196608, 5, 589825, 196608, 5, 655361, 196608, 5, 720897, 393216, 10, 786433, 458752, 15, 851969, 524288, 0, 917505, 524288, 0, 983041, 524288, 0, 1048577, 524288, 0, 1114113, 524288, 0, 1179649, 524288, 3, 2, 196608, 3, 65538, 196608, 6, 131074, 196608, 6, 196610, 196608, 6, 262146, 196608, 6, 327682, 196608, 6, 393218, 196608, 6, 458754, 196608, 6, 524290, 196608, 6, 589826, 196608, 6, 655362, 196608, 6, 720898, 196608, 9, 786434, 458752, 15, 851970, 524288, 0, 917506, 524288, 0, 983042, 524288, 0, 1048578, 524288, 0, 1114114, 524288, 0, 1179650, 524288, 3, 3, 196608, 3, 65539, 196608, 6, 131075, 196608, 6, 196611, 196608, 6, 262147, 196608, 6, 327683, 196608, 6, 393219, 196608, 6, 458755, 196608, 6, 524291, 196608, 6, 589827, 196608, 6, 655363, 196608, 6, 720899, 196608, 9, 786435, 458752, 15, 851971, 524288, 0, 917507, 524288, 0, 983043, 524288, 0, 1048579, 524288, 0, 1114115, 524288, 0, 1179651, 524288, 3, 4, 196608, 3, 65540, 196608, 6, 131076, 196608, 6, 196612, 196608, 6, 262148, 196608, 6, 327684, 196608, 6, 393220, 196608, 6, 458756, 196608, 6, 524292, 196608, 6, 589828, 196608, 6, 655364, 196608, 6, 720900, 196608, 9, 786436, 458752, 15, 851972, 524288, 0, 917508, 524288, 0, 983044, 524288, 0, 1048580, 524288, 0, 1114116, 524288, 0, 1179652, 524288, 3, 5, 196608, 3, 65541, 196608, 6, 131077, 196608, 6, 196613, 196608, 6, 262149, 196608, 6, 327685, 196608, 6, 393221, 196608, 6, 458757, 196608, 6, 524293, 196608, 6, 589829, 196608, 6, 655365, 196608, 6, 720901, 196608, 9, 786437, 458752, 15, 851973, 524288, 0, 917509, 524288, 0, 983045, 524288, 0, 1048581, 524288, 0, 1114117, 524288, 0, 1179653, 524288, 3, 6, 196608, 3, 65542, 196608, 6, 131078, 196608, 6, 196614, 196608, 6, 262150, 196608, 6, 327686, 196608, 6, 393222, 196608, 6, 458758, 196608, 6, 524294, 196608, 6, 589830, 196608, 6, 655366, 196608, 6, 720902, 196608, 9, 786438, 458752, 15, 851974, 524288, 0, 917510, 524288, 0, 983046, 524288, 0, 1048582, 524288, 0, 1114118, 524288, 0, 1179654, 524288, 3, 7, 196608, 3, 65543, 196608, 6, 131079, 196608, 6, 196615, 196608, 6, 262151, 196608, 6, 327687, 196608, 6, 393223, 196608, 6, 458759, 196608, 6, 524295, 196608, 6, 589831, 196608, 6, 655367, 196608, 6, 720903, 196608, 9, 786439, 458752, 15, 851975, 524288, 0, 917511, 524288, 0, 983047, 524288, 0, 1048583, 524288, 0, 1114119, 524288, 0, 1179655, 524288, 3, 8, 196608, 3, 65544, 196608, 6, 131080, 196608, 6, 196616, 196608, 6, 262152, 196608, 6, 327688, 196608, 6, 393224, 196608, 6, 458760, 196608, 6, 524296, 196608, 6, 589832, 196608, 6, 655368, 196608, 6, 720904, 196608, 9, 786440, 458752, 15, 851976, 524288, 0, 917512, 524288, 0, 983048, 524288, 0, 1048584, 524288, 0, 1114120, 524288, 0, 1179656, 524288, 3, 9, 196608, 3, 65545, 196608, 6, 131081, 196608, 6, 196617, 196608, 6, 262153, 196608, 6, 327689, 196608, 6, 393225, 196608, 6, 458761, 196608, 6, 524297, 196608, 6, 589833, 196608, 6, 655369, 196608, 6, 720905, 196608, 9, 786441, 458752, 15, 851977, 524288, 0, 917513, 524288, 0, 983049, 524288, 0, 1048585, 524288, 0, 1114121, 524288, 0, 1179657, 524288, 3, 10, 196608, 3, 65546, 196608, 6, 131082, 196608, 6, 196618, 196608, 6, 262154, 196608, 6, 327690, 196608, 6, 393226, 196608, 6, 458762, 196608, 6, 524298, 196608, 6, 589834, 196608, 6, 655370, 196608, 6, 720906, 196608, 9, 786442, 458752, 15, 851978, 524288, 0, 917514, 524288, 0, 983050, 524288, 0, 1048586, 524288, 0, 1114122, 524288, 0, 1179658, 524288, 3, 11, 196608, 3, 65547, 196608, 6, 131083, 196608, 6, 196619, 196608, 6, 262155, 196608, 6, 327691, 196608, 6, 393227, 196608, 6, 458763, 196608, 6, 524299, 196608, 6, 589835, 196608, 6, 655371, 196608, 6, 720907, 196608, 9, 786443, 458752, 15, 851979, 524288, 0, 917515, 524288, 0, 983051, 524288, 0, 1048587, 524288, 0, 1114123, 524288, 0, 1179659, 524288, 3, 12, 196608, 1, 65548, 196608, 4, 131084, 196608, 4, 196620, 196608, 4, 262156, 196608, 4, 327692, 196608, 4, 393228, 196608, 4, 458764, 196608, 4, 524300, 196608, 4, 589836, 196608, 4, 655372, 196608, 4, 720908, 196608, 7, 786444, 458752, 15, 851980, 524288, 0, 917516, 524288, 0, 983052, 524288, 0, 1048588, 524288, 0, 1114124, 524288, 0, 1179660, 524288, 3, 786445, 458752, 15, 851981, 524288, 0, 917517, 524288, 0, 983053, 524288, 0, 1048589, 524288, 0, 1114125, 524288, 0, 1179661, 524288, 3, 786446, 458752, 15, 851982, 524288, 0, 917518, 524288, 0, 983054, 524288, 0, 1048590, 524288, 0, 1114126, 524288, 0, 1179662, 524288, 3, 786447, 458752, 13, 851983, 458752, 16, 917519, 458752, 16, 983055, 458752, 16, 1048591, 458752, 16, 1114127, 458752, 16, 1179663, 524288, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_ulx63"]
+tile_data = PackedInt32Array(196608, 1, 786432, 196609, 1, 589824, 262145, 1, 458752, 327681, 1, 262144, 65538, 1, 1048576, 131074, 1, 1048576, 196610, 1, 524288, 262146, 1, 524288, 327682, 1, 327680)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_toqeb")
@@ -4749,13 +4768,34 @@ texture_region_size = Vector2i(64, 64)
 12:3/0 = 0
 17:8/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_toqeb"]
+scenes/2/scene = ExtResource("2_jndha")
+scenes/2/display_placeholder = ExtResource("2_jndha")
+scenes/3/scene = ExtResource("11_vxwga")
+scenes/4/scene = ExtResource("12_lvbi0")
+scenes/5/scene = ExtResource("13_02h5i")
+scenes/6/scene = ExtResource("14_glu0y")
+scenes/7/scene = ExtResource("15_ja24i")
+scenes/8/scene = ExtResource("16_cwg3a")
+scenes/9/scene = ExtResource("17_ppbya")
+scenes/10/scene = ExtResource("2_ulx63")
+scenes/11/scene = ExtResource("3_0q5x7")
+scenes/12/scene = ExtResource("4_etneu")
+scenes/13/scene = ExtResource("5_1ovbt")
+scenes/14/scene = ExtResource("6_0ayq7")
+scenes/15/scene = ExtResource("7_h40c4")
+scenes/16/scene = ExtResource("8_vlead")
+scenes/17/scene = ExtResource("9_c8t4k")
+
 [resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_priority = 50.0
+physics_layer_0/collision_priority = 200.0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Purple Platforms"
 terrain_set_0/terrain_0/color = Color(0.835026, 0.382381, 0.759584, 1)
 sources/0 = SubResource("TileSetAtlasSource_0xm2m")
+sources/1 = SubResource("TileSetScenesCollectionSource_toqeb")
 pattern_0 = SubResource("TileMapPattern_pj7kw")
 pattern_1 = SubResource("TileMapPattern_toqeb")
+pattern_2 = SubResource("TileMapPattern_ulx63")

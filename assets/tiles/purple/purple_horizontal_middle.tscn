@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bidmdwnnr2jtc"]
+
+[ext_resource type="Texture2D" uid="uid://cr3p3rrxvor8a" path="res://sprites/purple_terrain/terrain_purple_horizontal_middle.png" id="1_ayxno"]
+[ext_resource type="Script" uid="uid://b4kpgx522s3mu" path="res://assets/tiles/purple/switchable_platform.gd" id="2_dq3gk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc1md"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljs2h"]
+size = Vector2(64, 64)
+
+[node name="terrain_purple_horizontal_middle" type="Sprite2D"]
+texture = ExtResource("1_ayxno")
+script = ExtResource("2_dq3gk")
+team = "Purple"
+
+[node name="Area2D" type="Area2D" parent="." groups=["Switchable_Areas"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mc1md")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="SwitchablePlatformCollider" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ljs2h")

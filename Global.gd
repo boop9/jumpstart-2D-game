@@ -6,7 +6,10 @@ var levels: Dictionary = {
 	"2" = "res://Levels/Level2.tscn"
 }
 var death_count = 0
-
+var reset_count = 0
+var insideSwitchableObject = false
+var start_time = 0
+var end_time = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,8 +20,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("switch"):
-		switchState = not switchState
-		print("switched")
+		if insideSwitchableObject == false:
+			switchState = not switchState
+
+func _physics_process(delta: float) -> void:
+	if insideSwitchableObject == true:
+		print("inside switchable object")
+	else:
+		print("not inside")
 
 func next_level():
 	var currentSceneFile = get_tree().current_scene.scene_file_path
@@ -49,34 +58,49 @@ func fade_in(node, speed = 1):
 	faded_in = true
 
 func switch(node : Node):
-	if switchState == true:
-		if node.team == "Pink":
-			fade_out(node)
-			node.collision_enabled = false
+	if insideSwitchableObject == false:
+#		print("switched")
+		if switchState == true:
+			if node.team == "Pink":
+				fade_out(node)
+				node.collision_enabled = false
+			else:
+				fade_in(node)
+				node.collision_enabled = true
 		else:
-			fade_in(node)
-			node.collision_enabled = true
-	else:
-		if node.team == "Pink":
-			fade_in(node)
-			node.collision_enabled = true
+			if node.team == "Pink":
+				fade_in(node)
+				node.collision_enabled = true
+			else:
+				fade_out(node)
+				node.collision_enabled = false
+
+func switch_alt(node : Node,layer:int,collidernode:Node = node):
+	if insideSwitchableObject == false:
+#		print("switched")
+		if Global.switchState == true:
+			if node.team == "Pink":
+				Global.fade_out(node)
+				if collidernode != node:	
+					collidernode.set_collision_layer_value(layer,false)
+				else:
+					node.set_collision_layer_value(layer,false)
+			elif node.team == "Purple":
+				Global.fade_in(node)
+				if collidernode != node:	
+					collidernode.set_collision_layer_value(layer,true)
+				else:
+					node.set_collision_layer_value(layer,true)
 		else:
-			fade_out(node)
-			node.collision_enabled = false
-
-
-func switch_alt(node : Node,layer:int):
-	if Global.switchState == true:
-		if node.team == "Pink":
-			Global.fade_out(node)
-			node.set_collision_layer_value(layer,false)
-		elif node.team == "Purple":
-			Global.fade_in(node)
-			node.set_collision_layer_value(layer,true)
-	else:
-		if node.team == "Pink":
-			Global.fade_in(node)
-			node.set_collision_layer_value(layer,true)
-		elif node.team == "Purple":
-			Global.fade_out(node)
-			node.set_collision_layer_value(layer,false)
+			if node.team == "Pink":
+				Global.fade_in(node)
+				if collidernode != node:	
+					collidernode.set_collision_layer_value(layer,true)
+				else:
+					node.set_collision_layer_value(layer,true)
+			elif node.team == "Purple":
+				Global.fade_out(node)
+				if collidernode != node:	
+					collidernode.set_collision_layer_value(layer,false)
+				else:
+					node.set_collision_layer_value(layer,false)
